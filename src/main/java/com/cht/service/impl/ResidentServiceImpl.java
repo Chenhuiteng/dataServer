@@ -1,6 +1,7 @@
 package com.cht.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,10 @@ public class ResidentServiceImpl implements ResidentService {
   @Override
   public void deleteOne(Long id) {
     residentDao.delete(id);
+  }
+
+  @Override
+  public List<TblResident> listByParams(Map<String, Object> params) {
+    return residentDao.listByParams(params);
   }
 }

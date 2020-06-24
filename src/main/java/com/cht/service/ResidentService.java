@@ -1,6 +1,7 @@
 package com.cht.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cht.entity.TblResident;
 
@@ -15,4 +16,6 @@ public interface ResidentService {
 	public TblResident findOne(Long id);
 
     void deleteOne(Long id);
+
+	List<TblResident> listByParams(Map<String, Object> params);
 }

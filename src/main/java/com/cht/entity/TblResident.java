@@ -72,23 +72,55 @@ public class TblResident implements Serializable {
 		this.birthTime = birthTime;
 	}
 
-	
-	public TblResident(Long sid, String name, int age, String area, Time birthTime) {
+
+	public TblResident(String name, int age, String area, Time birthTime, String userName, String passWord) {
 		super();
-		this.sid = sid;
 		this.name = name;
 		this.age = age;
 		this.area = area;
 		this.birthTime = birthTime;
+		this.userName = userName;
+		this.passWord = passWord;
 	}
 
 	public TblResident() {
 		super();
 	}
-	@Override
-	public String toString() {
-		return "TblResident [sid=" + sid + ", name=" + name + ", age=" + age + ", area=" + area + ", birthTime="
-				+ birthTime + "]";
+
+
+
+
+	@Column(name = "user_name")
+	private String userName;
+	@Column(name = "pass_word")
+	private String passWord;
+
+	public String getUserName() {
+		return userName;
 	}
 
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	@Override
+	public String toString() {
+		return "TblResident{" +
+				"sid=" + sid +
+				", name='" + name + '\'' +
+				", age=" + age +
+				", area='" + area + '\'' +
+				", birthTime=" + birthTime +
+				", userName='" + userName + '\'' +
+				", passWord='" + passWord + '\'' +
+				'}';
+	}
 }
